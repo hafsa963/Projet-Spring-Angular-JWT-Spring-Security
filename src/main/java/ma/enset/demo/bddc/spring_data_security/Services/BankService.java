@@ -14,8 +14,8 @@ public class BankService {
     @Autowired
     private BankAccountRepository bankAccountRepository;
 
-    public void consulter() {
-        Optional<BankAccount> optional = bankAccountRepository.findById(currentAccount.getId());
+    public void consulter(String id) {
+        Optional<BankAccount> optional = bankAccountRepository.findById(id);
 
         if (optional.isPresent()) {
             BankAccount bankAccount = optional.get();
